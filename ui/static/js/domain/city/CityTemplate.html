@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="jumbotron">
+			<h1>Cities</h1>
+		</div>
+
+		<div class="list-group">
+			<div ng-repeat="state in ctrl.states">
+				<div>
+					<label for="groups" class="col-sm-1 list-group-item"><a
+						ng-href="#states/{{state.id}}">{{state.name}}:</a></label>
+				</div>
+				<br />
+				<hr>
+
+				<div>
+					<a ng-repeat="city in ctrl.cities" ng-href="#city/{{city.id}}"
+						class="list-group-item" ng-show='ctrl.cityInState(city, state)'> {{city.name}} </a>
+				</div>
+				<br /> <br />
+			</div>
+		</div>
+
+		<hr>
+		<div class="form-group">
+			<div class="buttons">
+				<button type="submit" class="btn btn-success"
+					ng-click=ctrl.backButton()>Back</button>
+				<button type="submit" class="btn btn-success" ng-click=ctrl.new()>New
+					City</button>
+			</div>
+		</div>
+
+	</div>
+</div>

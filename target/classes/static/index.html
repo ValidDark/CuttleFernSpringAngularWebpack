@@ -1,0 +1,83 @@
+<html ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+<title>CUTTLEFERN</title>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link href="css/coreStyle.css" rel="stylesheet">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+<script src="js/core/app.js"></script>
+<script src="js/core/constants.js"></script>
+
+<script src="js/core/HomeController.js"></script>
+
+<!-- ---------------------------------------------------------------- -->
+
+<script src="js/domain/person/PersonController.js"></script>
+<script src="js/domain/person/PersonService.js"></script>
+
+<script src="js/domain/person/PersonDetailController.js"></script>
+<script src="js/domain/person/PersonDetailService.js"></script>
+
+<script src="js/domain/person/PersonEditController.js"></script>
+<script src="js/domain/person/PersonEditService.js"></script>
+
+<script src="js/domain/person/PersonNewController.js"></script>
+<script src="js/domain/person/PersonNewService.js"></script>
+
+<!-- ---------------------------------------------------------------- -->
+
+<script src="js/domain/state/StateController.js"></script>
+<script src="js/domain/state/StateService.js"></script>
+
+<script src="js/domain/state/StateDetailController.js"></script>
+<script src="js/domain/state/StateDetailService.js"></script>
+
+<script src="js/domain/state/StateEditController.js"></script>
+<script src="js/domain/state/StateEditService.js"></script>
+
+<script src="js/domain/state/StateNewController.js"></script>
+<script src="js/domain/state/StateNewService.js"></script>
+
+<!-- ---------------------------------------------------------------- -->
+
+<script src="js/domain/city/CityController.js"></script>
+<script src="js/domain/city/CityService.js"></script>
+
+
+<!-- ---------------------------------------------------------------- -->
+
+<script src="js/domain/group/GroupController.js"></script>
+<script src="js/domain/group/GroupService.js"></script>
+
+<!-- ---------------------------------------------------------------- -->
+
+<script src="js/domain/interest/InterestController.js"></script>
+<script src="js/domain/interest/InterestService.js"></script>
+
+<!-- ---------------------------------------------------------------- -->
+
+
+<script src="js/core/routes.js"></script>
+
+</head>
+<body>
+	<ng-view></ng-view>
+</body>
+</html>

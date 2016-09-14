@@ -1,0 +1,102 @@
+<div class="container-fluid">
+	<div class="col-md-10 col-md-offset-1">
+
+		<div class="jumbotron">
+			<h1>{{ctrl.person.name}} - Edit</h1>
+		</div>
+
+
+		<div>
+			<form class="form-horizontal">
+
+				<div class="form-wrapper">
+
+					<div class="form-group">
+						<label for="name" class="col-sm-1 control-label">Name:</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="name"
+								placeholder="Name" ng-model="ctrl.person.name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="state" class="col-sm-1 control-label">State:</label>
+						<div class="col-sm-8">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="stateMenu" data-toggle="dropdown">
+								{{ctrl.person.city.state.name}} <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li ng-repeat="state in ctrl.states"><a
+									style="cursor: pointer;" ng-click="ctrl.stateSelected(state)">{{state.name}}</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="city" class="col-sm-1 control-label">City:</label>
+						<div class="col-sm-8">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="cityMenu" data-toggle="dropdown">
+								{{ctrl.person.city.name}} <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li ng-repeat="city in ctrl.cities"><a
+									style="cursor: pointer;" ng-show='ctrl.cityInState(city)'
+									ng-click="ctrl.citySelected(city)">{{city.name}}</a></li>
+							</ul>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<div class="form-group">
+						<label for="interests" class="col-sm-1 control-label">Interests:</label>
+						<div class="col-sm-8">
+							<div ng-repeat="interest in ctrl.interests">
+								<label class="checkbox" for="{{$index}}"> <input
+									type="checkbox" ng-change="ctrl.interestToggled(interest)"
+									ng-model="ctrl.interested[interest.id]" name="interestgroup"
+									id="{{interest.id}}" /> <a ng-href="#interest/{{interest.id}}"
+									class="list-group-item">{{interest.name}}</a>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="form-group">
+						<label for="groups" class="col-sm-1 control-label">Groups:</label>
+						<div class="col-sm-8">
+							<div ng-repeat="group in ctrl.groups">
+								<label class="checkbox" for="{{$index}}"
+									ng-show='ctrl.groupInCity(group) && ctrl.hasGroupInterest(group)'>
+									<input type="checkbox" ng-change="ctrl.groupToggled(group)"
+									ng-model="ctrl.grouped[group.id]" name="groupgroup"
+									id="{{group.id}}" /> <a
+									ng-href="#groups/{{group.id}}" class="list-group-item">{{group.name}}</a>
+								</label>
+							</div>
+						</div>
+
+					</div>
+
+					<hr>
+					<div class="form-group">
+						<div class="buttons">
+							<button type="submit" class="btn btn-success"
+								ng-click=ctrl.backButton()>Back</button>
+							<button type="submit" class="btn btn-success"
+								ng-click="ctrl.save();ctrl.backButton()">Save</button>
+							<button type="submit" class="btn btn-success"
+								ng-click="ctrl.delete();ctrl.backButton()">Delete</button>
+						</div>
+					</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+

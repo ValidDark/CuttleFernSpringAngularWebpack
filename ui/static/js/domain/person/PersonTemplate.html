@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+            <h1>People</h1>
+        </div>
+
+        <div class="list-group">
+            <a ng-repeat="person in ctrl.people"
+                ng-href="#people/{{person.id}}" class="list-group-item"> <span
+                class="glyphicon glyphicon-person" aria-hidden="true"></span>
+                {{person.name}}
+            </a>
+        </div>
+        
+        <hr>
+					<div class="form-group">
+						<div class="buttons" >
+							<button type="submit" class="btn btn-success" ng-click=ctrl.backButton()>Back</button>
+							<button type="submit" class="btn btn-success" ng-click=ctrl.new()>New</button>
+						</div>
+					</div>
+        
+    </div>
+</div>
